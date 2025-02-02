@@ -1,7 +1,7 @@
 .container
   - content_for :title
     h1.mt-5
-      = t 'Посты'
+      = "Посты"
   .row
     - @posts.each do |post|
        .col-md-12
@@ -12,6 +12,8 @@
             .card-text.mb2
               = post.body.slice(0..255)
             .text-right.small.text-muted.mt-auto
+                span.me-2
+                    = "Лайки: #{post.likes.size}"
                 span.me-2
                     = "Автор: #{post.user.email}"
                 span.me-2

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "likes/create"
+  get "likes/destroy"
   get "comments/create"
   get "posts/new"
   get "posts/create"
@@ -20,6 +22,7 @@ Rails.application.routes.draw do
   resources :posts do
     scope module: :posts do
       resources :comments, only: %i[create]
+      resources :likes, only: %i[create destroy]
     end
   end
 end
