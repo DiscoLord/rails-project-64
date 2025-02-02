@@ -71,3 +71,5 @@ end
 gem "slim"
 gem "slim_lint"
 gem "slim-rails"
+
+gem 'devise'
