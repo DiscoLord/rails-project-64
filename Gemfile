@@ -62,6 +62,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "minitest-power_assert"
+  gem "faker"
 end
 
 group :production do
@@ -73,3 +74,5 @@ gem "slim_lint"
 gem "slim-rails"
 
 gem "devise"
+
+gem "simple_form"

@@ -7,3 +7,32 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require 'faker'
+
+User.destroy_all
+Category.destroy_all
+Post.destroy_all
+
+users = 10.times.map do
+  User.create!(
+    email: Faker::Internet.unique.email,
+    password: 'password'
+  )
+end
+
+Category.create!([
+  { name: 'Новости' },
+  { name: 'Спорт' },
+  { name: 'Технологии' },
+  { name: 'Развлечения' }
+])
+
+30.times do
+  Post.create!(
+    title: Faker::Lorem.sentence(word_count: 6),
+    body: Faker::Lorem.paragraph(sentence_count: 10),
+    user: User.all.sample,
+    category: Category.all.sample
+  )
+end

@@ -1,0 +1,19 @@
+.card.container-fluide
+  .card-header
+    =link_to root_path do
+      = "Все посты"
+    = "Категория: #{@post.category.name}"
+  .card-body
+    h3
+      = @post.title
+    .mt-3
+    .mb-5 = @post.body
+    .card-footer
+      .d-flex.justify-content-between
+        .d-flex.small.text-muted
+            .me-5
+                | Автор: 
+                strong = @post.user.email
+            span
+                | Создан: 
+                strong = time_ago_in_words(@post.created_at) + " назад"

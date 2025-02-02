@@ -1,0 +1,22 @@
+.container
+  - content_for :title
+    h1.mt-5
+      = t 'Посты'
+  .row
+    - @posts.each do |post|
+       .col-md-12
+        .card.mb-3
+          .card-body
+            h5.card-title
+              = link_to post.title, post_path(post)
+            .card-text.mb2
+              = post.body.slice(0..255)
+            .text-right.small.text-muted.mt-auto
+                span.me-2
+                    = "Автор: #{post.user.email}"
+                span.me-2
+                    = "Создан: #{time_ago_in_words(post.created_at)} назад"
+
+  -if user_signed_in?
+    = link_to new_post_path, class: 'btn btn-primary mt-4' do
+      - "Новый пост"
