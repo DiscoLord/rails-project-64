@@ -1,8 +1,8 @@
 .card.container-fluide
   .card-header
     =link_to root_path do
-      = t('.link_to_all_posts')
-    = t('.category_name', name: @post.category.name)
+      = t(".link_to_all_posts")
+    = t(".category_name", name: @post.category.name)
   .card-body
     h3
       = @post.title
@@ -12,11 +12,11 @@
       .d-flex.justify-content-between
         .d-flex.small.text-muted
             .me-5
-                strong = t('.author', name: @post.user.email)
+                strong = t(".author", name: @post.user.email)
             span
-                strong = t('.created', time_ago: time_ago_in_words(@post.created_at))
+                strong = t(".created", time_ago: time_ago_in_words(@post.created_at))
         div
-          = t('posts.index.liked', count: @post.likes.count)
+          = t("posts.index.liked", count: @post.likes.count)
           - if user_signed_in?
             - if @post_user_like
               = link_to post_like_path(@post, @post_user_like), data: { turbo_method: :delete } do
@@ -28,7 +28,7 @@
             i.bi.bi-heart-fill.h5.ms-2.disable
     .card-footer
       - if user_signed_in?
-        = render partial: 'posts/comments/comment_form', locals: { comment: @comment, post: @post, parent_id: nil }
+        = render partial: "posts/comments/comment_form", locals: { comment: @comment, post: @post, parent_id: nil }
         .mb-3
       - @comments_tree.each do |comment, child|
-         = render partial: 'posts/comments/comment', locals: { comment:, child:, new_comment: @comment, post: @post }
+         = render partial: "posts/comments/comment", locals: { comment:, child:, new_comment: @comment, post: @post }
