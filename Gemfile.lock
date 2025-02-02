@@ -263,6 +263,17 @@ GEM
     sentry-ruby (5.22.3)
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
+    slim (5.2.1)
+      temple (~> 0.10.0)
+      tilt (>= 2.1.0)
+    slim-rails (3.7.0)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      slim (>= 3.0, < 6.0, != 5.0.0)
+    slim_lint (0.31.1)
+      rexml (~> 3.2)
+      rubocop (>= 1.0, < 2.0)
+      slim (>= 3.0, < 6.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -282,7 +293,9 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.2)
+    temple (0.10.3)
     thor (1.3.2)
+    tilt (2.6.0)
     timeout (0.4.3)
     turbo-rails (2.0.11)
       actionpack (>= 6.0.0)
@@ -330,10 +343,14 @@ DEPENDENCIES
   pg
   puma (>= 5.0)
   rails (~> 7.2.2, >= 7.2.2.1)
+  rubocop-rails
   rubocop-rails-omakase
   selenium-webdriver
   sentry-rails
   sentry-ruby
+  slim
+  slim-rails
+  slim_lint
   sprockets-rails
   sqlite3 (>= 1.4)
   stackprof
