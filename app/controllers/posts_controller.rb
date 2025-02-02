@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
 
   def index
-    @posts = Post.order('created_at DESC').includes(:user)
+    @posts = Post.order("created_at DESC").includes(:user)
   end
 
   def show
@@ -66,4 +66,3 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :body, :category_id)
   end
 end
-
