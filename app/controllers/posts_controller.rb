@@ -7,6 +7,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
+    @comments_tree = @post.comments.includes(:user).order("created_at DESC").arrange
+    @comment = PostComment.new
   end
 
   def new

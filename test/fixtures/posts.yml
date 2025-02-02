@@ -11,3 +11,9 @@ two:
   body: MyText
   user: two
   category: two
+
+three:
+  title: MyString
+  body: MyText
+  category: two
+  user: one

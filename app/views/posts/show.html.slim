@@ -17,3 +17,9 @@
             span
                 | Создан: 
                 strong = time_ago_in_words(@post.created_at) + " назад"
+    .card-footer
+      - if user_signed_in?
+        = render partial: 'posts/comments/comment_form', locals: { comment: @comment, post: @post, parent_id: nil }
+        .mb-3
+      - @comments_tree.each do |comment, child|
+         = render partial: 'posts/comments/comment', locals: { comment:, child:, new_comment: @comment, post: @post }

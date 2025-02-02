@@ -76,3 +76,5 @@ gem "slim-rails"
 gem "devise"
 
 gem "simple_form"
+
+gem "ancestry"

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "comments/create"
   get "posts/new"
   get "posts/create"
   get "posts/index"
@@ -17,5 +18,8 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :posts do
+    scope module: :posts do
+      resources :comments, only: %i[create]
+    end
   end
 end
