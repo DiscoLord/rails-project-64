@@ -1,0 +1,10 @@
+ru:
+  placeholders:
+    email: "Введите ваш email"
+    password: "Введите ваш пароль"
+    password_confirmation: "Повторите ваш пароль"
+  signin: "Войти"
+  signup: "Зарегистрироваться"
+  login: "Вход"
+  registration: "Регистрация"
+  already_have_an_account: "Уже есть аккаунт? Войти"

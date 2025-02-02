@@ -1,0 +1,39 @@
+ru:
+  posts:
+    comments:
+      comment:
+        answer: Ответить
+        author: 'Комментарий от %{author}, создан: %{time}'
+      create:
+        success_comment: Комментарий успешно создан
+
+    index:
+      title: Блололог
+      liked:
+        zero: "%{count} лайков"
+        one: "%{count} лайк"
+        few: "%{count} лайка"
+        many: "%{count} лайков"
+        other: "%{count} лайков"
+      created: "Создан: %{time_ago}"
+      author: "Автор: %{name}"
+      new_post: Создать пост
+    new:
+      title: Новый Пост
+    show:
+      title: Пост
+      link_to_all_posts: Все посты
+      category_name: " / %{name}"
+      created: "Создан: %{time_ago}"
+      author: "Автор: %{name}"
+    create:
+      success: Пост создан
+    edit:
+      access_error: Нет доступа!
+      edit: Редактировать пост
+    update:
+      success: Пост изменен
+      access_error: Нет доступа!
+    destroy:
+      success: Посту удален
+      access_error: Нет доступа!

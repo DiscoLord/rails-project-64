@@ -1,4 +1,10 @@
-= simple_form_for comment, method: :post, url: post_comments_path(post) do |c|
-  =c.input :content
-  =c.hidden_field :parent_id, value: parent_id
-  =c.button :submit, class: 'btn btn-warning'
+= simple_form_for comment, method: :post, url: post_comments_path(post), html: { class: 'card p-3 mb-3 shadow-sm' } do |c|
+  h5.mb-3.text-muted = "Добавить комментарий"
+
+  .mb-3
+    = c.input :content, as: :text, input_html: { class: 'form-control', placeholder: 'Напишите ваш комментарий...' }, label: false
+
+  = c.hidden_field :parent_id, value: parent_id
+
+  .d-flex.justify-content-end
+    = c.button :submit, "Отправить", class: 'btn btn-primary'

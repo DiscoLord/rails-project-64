@@ -78,3 +78,5 @@ gem "devise"
 gem "simple_form"
 
 gem "ancestry"
+
+gem "rails-i18n"

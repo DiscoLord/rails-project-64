@@ -1,0 +1,46 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'Не может быть пустым'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Обратите внимание на проблемы ниже:"
+    # Examples
+    labels:
+      post:
+        new:
+          title: Название
+          body: Содержание
+          category: Категория
+      user:
+        new:
+          email: Электронная почта
+          password: Пароль
+          password_confirmation: Подтвердите пароль
+
+    placeholders:
+      post:
+        new:
+          body: Начните вашу мысль
+          title: Придумайте Название
+          category: Укажите категорию
+      user:
+        new:
+          email: example@email.ru
+    submit:
+      post:
+        create: создать пост
+    hints:
+      post:
+        body: 
+        category: Категория
+        title:
+      user:
+        email: Введите вашу электронную почту
+        password: Введите пароль...не менее 6 символов
+        password_confirmation: Повторите пароль, введенный в окне выше

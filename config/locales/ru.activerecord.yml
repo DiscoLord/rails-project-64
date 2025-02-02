@@ -1,0 +1,31 @@
+ru:
+  activerecord:
+    models:
+      post:
+        one: Пост
+      user:
+        one: Пользователь
+
+      post/comment: Комментарий
+    attributes:
+      post:
+        title: Название
+        body: Содержание
+      category:
+        name: Категория
+      user:
+        email: Почта
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+      post_comment:
+        content: Комментарий
+    errors:
+      models:
+        post:
+          attributes:
+            body:
+              too_short: Минимум %{count} символов.
+              too_long: Не больше %{count} символов.
+            title:
+              too_short: Минимум %{count} символов.
+              too_long: Не больше %{count} символов.

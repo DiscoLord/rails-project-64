@@ -1,6 +1,6 @@
 .card.border-success.mb-3
   .card-header
-    = "Автор: #{comment.user.email}, #{l(comment.created_at, format: :long)}"
+    = t('.author', author: comment.user.email, time: l(comment.created_at, format: :long))
   .card-body.text-success
     p.card-text
       = comment[:content]
@@ -9,7 +9,7 @@
   .card-footer.bg-transparent.border-success
     - if user_signed_in?
       = link_to "##{comment.id}", data: { 'bs-toggle': 'collapse' }, aria: { controls: comment.id.to_s } do
-        = "Ответить"
+        = t('.answer')
       .div.collapse [id="#{comment.id}"]
         .div.card.card-body
           = render partial: 'posts/comments/comment_form', locals: { comment: new_comment, post:, parent_id: comment.id }
