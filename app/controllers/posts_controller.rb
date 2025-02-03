@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post = Post.find params[:id]
     return if current_user.id == @post.user_id
 
-    redirect_to posts_url, notice: t('.access_error')
+    redirect_to posts_url, notice: t(".access_error")
     nil
   end
 
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to @post, notice: t('.success')
+      redirect_to @post, notice: t(".success")
     else
       render :new, status: :unprocessable_entity
     end
@@ -38,12 +38,12 @@ class PostsController < ApplicationController
     @post = Post.find params[:id]
 
     unless current_user.id == @post.user_id
-      redirect_to posts_url, notice: t('.access_error')
+      redirect_to posts_url, notice: t(".access_error")
       return
     end
 
     if @post.update(post_params)
-      redirect_to @post, notice: t('.success')
+      redirect_to @post, notice: t(".success")
     else
       render :edit, status: :unprocessable_entity
     end
@@ -53,13 +53,13 @@ class PostsController < ApplicationController
     @post = Post.find params[:id]
 
     unless current_user.id == @post.user_id
-      redirect_to posts_url, notice: t('.access_error')
+      redirect_to posts_url, notice: t(".access_error")
       return
     end
 
     @post.destroy
 
-    redirect_to posts_url, notice: t('.success')
+    redirect_to posts_url, notice: t(".success")
   end
 
   private

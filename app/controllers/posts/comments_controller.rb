@@ -3,9 +3,9 @@ class Posts::CommentsController < ApplicationController
     @comment = parent_post.comments.build(post_comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to parent_post, notice: t('.success_comment')
+      redirect_to parent_post, notice: t(".success_comment")
     else
-      redirect_to parent_post, notice: t('.empty_comment')
+      redirect_to parent_post, notice: t(".empty_comment")
     end
   end
 
