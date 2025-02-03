@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -14,7 +16,7 @@ User.destroy_all
 Category.destroy_all
 Post.destroy_all
 
-users = 10.times.map do
+10.times.map do
   User.create!(
     email: Faker::Internet.unique.email,
     password: 'password'
@@ -22,11 +24,11 @@ users = 10.times.map do
 end
 
 Category.create!([
-  { name: 'Новости' },
-  { name: 'Спорт' },
-  { name: 'Технологии' },
-  { name: 'Развлечения' }
-])
+                   { name: 'Новости' },
+                   { name: 'Спорт' },
+                   { name: 'Технологии' },
+                   { name: 'Развлечения' }
+                 ])
 
 30.times do
   Post.create!(

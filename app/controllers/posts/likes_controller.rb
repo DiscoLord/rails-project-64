@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Posts::LikesController < ApplicationController
   def create
     @like = parent_post.likes.build(user_id: current_user.id)
