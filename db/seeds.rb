@@ -16,7 +16,7 @@ User.destroy_all
 Category.destroy_all
 Post.destroy_all
 
-10.times.map do
+Array.new(10) do
   User.create!(
     email: Faker::Internet.unique.email,
     password: 'password'
