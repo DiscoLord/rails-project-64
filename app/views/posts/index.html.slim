@@ -1,7 +1,7 @@
 .container
   - content_for :title
     h1.mt-5
-      = t ".title"
+      = t '.title'
   .row
     - @posts.each do |post|
        .col-md-12
@@ -13,12 +13,12 @@
               = post.body.slice(0..255)
             .text-right.small.text-muted.mt-auto
                 span.me-2
-                    = t(".liked", count: post.likes.size)
+                    = t('.liked', count: post.likes.size)
                 span.me-2
-                    = t(".author", name: post.creator.email)
+                    = t('.author', name: post.creator.email)
                 span.me-2
-                    = t(".created", time_ago: (time_ago_in_words post.created_at))
+                    = t('.created', time_ago: (time_ago_in_words post.created_at))
 
   -if user_signed_in?
-    = link_to new_post_path, class: "btn btn-primary mt-4" do
-      - t(".new_post")
+    = link_to new_post_path, class: 'btn btn-primary mt-4' do
+      - t('.new_post')

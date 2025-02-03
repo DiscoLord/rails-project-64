@@ -23,6 +23,7 @@ AllCops:
     - 'vendor/**/*'
     - 'node_modules/**/*'
     - 'code/tmp/**/*'
+    - 'app/views'
   SuggestExtensions: false
 
 Rails:

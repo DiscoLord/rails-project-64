@@ -3,26 +3,26 @@
     .col-md-6
       .card.shadow-sm
         .card-body
-          h3.mb-4.text-center.text-primary = t("registration")
+          h3.mb-4.text-center.text-primary = t('registration')
 
-          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form" }) do |f|
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form' }) do |f|
             .mb-3
-              = f.label :email, class: "form-label"
+              = f.label :email, class: 'form-label'
               = f.email_field :email, autofocus: true,
-               autocomplete: "email", class: "form-control", placeholder: t("placeholders.email")
+               autocomplete: 'email', class: 'form-control', placeholder: t('placeholders.email')
 
             .mb-3
-              = f.label :password, class: "form-label"
-              = f.password_field :password, autocomplete: "new-password",
-               class: "form-control", placeholder: t("placeholders.password")
+              = f.label :password, class: 'form-label'
+              = f.password_field :password, autocomplete: 'new-password',
+               class: 'form-control', placeholder: t('placeholders.password')
 
             .mb-3
-              = f.label :password_confirmation, class: "form-label"
-              = f.password_field :password_confirmation, autocomplete: "new-password",
-               class: "form-control", placeholder: t("placeholders.password_confirmation")
+              = f.label :password_confirmation, class: 'form-label'
+              = f.password_field :password_confirmation, autocomplete: 'new-password',
+               class: 'form-control', placeholder: t('placeholders.password_confirmation')
 
             .d-grid
-              = f.submit t("signup"), class: "btn btn-primary btn-block"
+              = f.submit t('signup'), class: 'btn btn-primary btn-block'
 
           .text-center.mt-3
-            = link_to t("already_have_an_account"), new_session_path(resource_name), class: "text-decoration-none"
+            = link_to t('already_have_an_account'), new_session_path(resource_name), class: 'text-decoration-none'

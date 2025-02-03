@@ -1,16 +1,16 @@
 .card.border-success.mb-3
   .card-header
-    = t(".author", author: comment.user.email, time: l(comment.created_at, format: :long))
+    = t('.author', author: comment.user.email, time: l(comment.created_at, format: :long))
   .card-body.text-success
     p.card-text
       = comment[:content]
       - child.each do |comment, child|
-        = render partial: "posts/comments/comment", locals: { new_comment:, child:, comment:, post: }
+        = render partial: 'posts/comments/comment', locals: { new_comment:, child:, comment:, post: }
   .card-footer.bg-transparent.border-success
     - if user_signed_in?
-      = link_to "##{comment.id}", data: { "bs-toggle": "collapse" }, aria: { controls: comment.id.to_s } do
-        = t(".answer")
-      .div.collapse [id="#{comment.id}"]
+      = link_to "##{comment.id}", data: { 'bs-toggle': 'collapse' }, aria: { controls: comment.id.to_s } do
+        = t('.answer')
+      .div.collapse [id='#{comment.id}']
         .div.card.card-body
-          = render partial: "posts/comments/comment_form",
+          = render partial: 'posts/comments/comment_form',
            locals: { comment: new_comment, post:, parent_id: comment.id }
