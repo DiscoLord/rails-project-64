@@ -12,7 +12,7 @@
       .d-flex.justify-content-between
         .d-flex.small.text-muted
             .me-5
-                strong = t(".author", name: @post.user.email)
+                strong = t(".author", name: @post.creator.email)
             span
                 strong = t(".created", time_ago: time_ago_in_words(@post.created_at))
         div

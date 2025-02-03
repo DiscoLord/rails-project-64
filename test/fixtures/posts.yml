@@ -3,17 +3,17 @@
 one:
   title: MyString
   body: MyText
-  user: one
+  creator: one
   category: one
 
 two:
   title: MyString
   body: MyText
-  user: two
+  creator: two
   category: two
 
 three:
   title: MyString
   body: MyText
+  creator: one
   category: two
-  user: one
