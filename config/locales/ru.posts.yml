@@ -6,6 +6,7 @@ ru:
         author: 'Комментарий от %{author}, создан: %{time}'
       create:
         success_comment: Комментарий успешно создан
+        empty_comment: Не может быть пустым
 
     index:
       title: Блололог
@@ -35,5 +36,5 @@ ru:
       success: Пост изменен
       access_error: Нет доступа!
     destroy:
-      success: Посту удален
+      success: Пост удален
       access_error: Нет доступа!

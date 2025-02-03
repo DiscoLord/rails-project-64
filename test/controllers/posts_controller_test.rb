@@ -75,6 +75,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       delete post_url @second_user_post
     end
     assert_response :redirect
-    assert { flash[:notice] == "Ошибка доступа" }
+    assert { flash[:notice] == "Нет доступа!" }
   end
 end

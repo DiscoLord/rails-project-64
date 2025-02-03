@@ -35,6 +35,6 @@ class Posts::CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference("@post.comments.count") do
       post post_comments_url @post, params: { post_comment: @attrs }
     end
-    assert { flash[:notice] == "Пустой комменты >:-(" }
+    assert { flash[:notice] == "Не может быть пустым" }
   end
 end

@@ -1,11 +1,11 @@
 class Posts::CommentsController < ApplicationController
   def create
-    @comment = resource_post.comments.build(post_comment_params)
+    @comment = parent_post.comments.build(post_comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to resource_post, notice: "Коммент добавлен"
+      redirect_to parent_post, notice: t('.success_comment')
     else
-      redirect_to resource_post, notice: "Пустой комменты >:-("
+      redirect_to parent_post, notice: t('.empty_comment')
     end
   end
 
@@ -15,7 +15,7 @@ class Posts::CommentsController < ApplicationController
     params.require(:post_comment).permit(:content, :parent_id)
   end
 
-  def resource_post
-    @resource_post ||= Post.find params[:post_id]
+  def parent_post
+    @parent_post ||= Post.find params[:post_id]
   end
 end
