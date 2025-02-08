@@ -8,8 +8,8 @@ else
 
   10.times do
     Post.create!(
-      title: Faker::Lorem.sentence(word_count: 6),
-      body: Faker::Lorem.paragraph(sentence_count: 10),
+      title: Faker::Lorem.characters(number: rand(5..255)), # Минимум 5 символов
+      body: Faker::Lorem.paragraph_by_chars(number: rand(200..4000)),
       creator: users.sample,
       category: categories.sample
     )

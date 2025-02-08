@@ -9,7 +9,7 @@ else
   posts.each do |post|
     rand(2..5).times do
       comment = PostComment.create!(
-        content: Faker::Lorem.sentence(word_count: 10),
+        content: Faker::Lorem.characters(number: rand(3..1000)),
         post: post,
         user: users.sample
       )
@@ -18,7 +18,7 @@ else
       next unless rand < 0.5
 
       PostComment.create!(
-        content: Faker::Lorem.sentence(word_count: 10),
+        content: Faker::Lorem.characters(number: rand(3..1000)),
         post: post,
         user: users.sample,
         parent: comment
