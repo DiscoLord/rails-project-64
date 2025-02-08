@@ -10,31 +10,10 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-require 'faker'
+require_relative 'seeds/categories'
+require_relative 'seeds/users'
+require_relative 'seeds/posts'
+require_relative 'seeds/post_comments'
+require_relative 'seeds/post_likes'
 
-User.destroy_all
-Category.destroy_all
-Post.destroy_all
-
-Array.new(10) do
-  User.create!(
-    email: Faker::Internet.unique.email,
-    password: 'password'
-  )
-end
-
-Category.create!([
-                   { name: 'Новости' },
-                   { name: 'Спорт' },
-                   { name: 'Технологии' },
-                   { name: 'Развлечения' }
-                 ])
-
-30.times do
-  Post.create!(
-    title: Faker::Lorem.sentence(word_count: 6),
-    body: Faker::Lorem.paragraph(sentence_count: 10),
-    user: User.all.sample,
-    category: Category.all.sample
-  )
-end
+Rails.logger.debug '🎉 Seeding completed!'

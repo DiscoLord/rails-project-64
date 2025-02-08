@@ -51,6 +51,7 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rails-omakase', require: false
 
+  gem 'faker'
   gem 'sqlite3', '>= 1.4'
 end
 
@@ -62,7 +63,6 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
-  gem 'faker'
   gem 'minitest-power_assert'
   gem 'selenium-webdriver'
 end
