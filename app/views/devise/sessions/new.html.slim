@@ -18,7 +18,7 @@
 
             .mb-3
               = f.check_box :remember_me, class: 'form-check-input'
-              = f.label :remember_me, class: 'form-check-label ms-2', for: 'user_remember_me'
+              = f.label :remember_me, t('devise.sessions.remember_me'), class: 'form-check-label ms-2'
 
             .d-grid
               = f.submit t('signin'), class: 'btn btn-primary btn-block'
