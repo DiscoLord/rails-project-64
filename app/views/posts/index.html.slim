@@ -13,7 +13,7 @@
               = post.body.slice(0..255)
             .text-right.small.text-muted.mt-auto
                 span.me-2
-                    = t('.liked', count: post.likes.size)
+                    = t('.liked', count: post.likes_count)
                 span.me-2
                     = t('.author', name: post.creator.email)
                 span.me-2

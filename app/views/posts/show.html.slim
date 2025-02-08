@@ -16,7 +16,7 @@
             span
                 strong = t('.created', time_ago: time_ago_in_words(@post.created_at))
         div
-          = t('posts.index.liked', count: @post.likes.count)
+          = t('posts.index.liked', count: @post.likes_count)
           - if user_signed_in?
             - if @post_user_like
               = link_to post_like_path(@post, @post_user_like), data: { turbo_method: :delete } do
