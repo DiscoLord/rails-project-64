@@ -51,7 +51,6 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rails-omakase', require: false
 
-  gem 'faker'
   gem 'sqlite3', '>= 1.4'
 end
 
@@ -82,3 +81,4 @@ gem 'simple_form'
 gem 'ancestry'
 
 gem 'rails-i18n'
+gem 'faker'
