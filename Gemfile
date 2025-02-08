@@ -80,5 +80,5 @@ gem 'simple_form'
 
 gem 'ancestry'
 
-gem 'rails-i18n'
 gem 'faker'
+gem 'rails-i18n'
