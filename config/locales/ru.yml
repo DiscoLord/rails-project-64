@@ -3,8 +3,16 @@ ru:
     email: "Введите ваш email"
     password: "Введите ваш пароль"
     password_confirmation: "Повторите ваш пароль"
+    write_your_comment: "Напишите ваш комментарий..."
   signin: "Войти"
   signup: "Зарегистрироваться"
   login: "Вход"
   registration: "Регистрация"
   already_have_an_account: "Уже есть аккаунт? Войти"
+  comments:
+    add_comment: "Добавить комментарий"
+    send: "Отправить"
+  posts:
+    add_new: "Создать новый пост"
+    add_name: "Придумайте название"
+    add_text: "Напишите текст поста"

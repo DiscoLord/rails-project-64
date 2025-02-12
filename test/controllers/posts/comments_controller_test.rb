@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'test_helper'
-
 class Posts::CommentsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
@@ -29,6 +27,8 @@ class Posts::CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('@post.comments.count', 1) do
       post post_comments_url @post, params: { post_comment: @attrs.merge(parent_id: @comment.id) }
     end
+    inner_comment = PostComment.where('ancestry LIKE ?', "%/#{@comment.id}")
+    assert inner_comment.exists?
   end
 
   test 'blank comment' do

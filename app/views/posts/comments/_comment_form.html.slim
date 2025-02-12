@@ -1,12 +1,12 @@
 = simple_form_for comment, method: :post, url: post_comments_path(post),
  html: { class: 'card p-3 mb-3 shadow-sm' } do |c|
-  h5.mb-3.text-muted = 'Добавить комментарий'
+  h5.mb-3.text-muted = t('comments.add_comment')
 
   .mb-3
     = c.input :content, as: :text,
-     input_html: { class: 'form-control', placeholder: 'Напишите ваш комментарий...' }, label: false
+     input_html: { class: 'form-control', placeholder: t('placeholders.write_your_comment') }, label: false
 
   = c.hidden_field :parent_id, value: parent_id
 
   .d-flex.justify-content-end
-    = c.button :submit, 'Отправить', class: 'btn btn-primary'
+    = c.button :submit, t('comments.send'), class: 'btn btn-primary'

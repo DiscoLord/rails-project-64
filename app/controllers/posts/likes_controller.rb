@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Posts::LikesController < ApplicationController
+  before_action :authenticate_user!, only: %i[create destroy]
+
   def create
     @like = parent_post.likes.build(user_id: current_user.id)
 
